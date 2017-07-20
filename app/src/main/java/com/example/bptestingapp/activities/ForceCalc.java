@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.bptestingapp.R;
 import com.example.bptestingapp.auxiliary.auxFc;
-import com.example.bptestingapp.calcFc;
+import com.example.bptestingapp.auxiliary.calcFc;
 import com.example.bptestingapp.database.SQLiteDatabaseHandler;
 
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
@@ -40,6 +40,7 @@ public class ForceCalc extends AppCompatActivity {
         type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                checkValues();
                 switchInputValue();
             }
 
@@ -90,6 +91,7 @@ public class ForceCalc extends AppCompatActivity {
                 R.array.prurez_array, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         shape_spinner.setAdapter(adapter3);
+        shape_spinner.setSelection(adapter3.getCount()-1);
 
         shape_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -139,22 +141,7 @@ public class ForceCalc extends AppCompatActivity {
             int tension = this.getResources().getInteger(resourceId);*/
             SQLiteDatabaseHandler db = new SQLiteDatabaseHandler(this);
             int tension = getTension(material, typ, nature, this);
-           /* switch(typ){
-                case "tah":
-                    //tension = db.getMaterialThrust(material);
-                    tension = db.getMaterialProperty(material, "thrust");
-                    break;
-                case "tlak":
-                    //tension = db.getMaterialPressure(material);
-                    tension = db.getMaterialProperty(material, "pressure");
-                    break;
-                case "ohyb":
-                    tension = db.getMaterialBend(material);
-                    break;
-                case "smyk":
-                    tension = db.getMaterialCut(material);
-                    break;
-            }*/
+
             material_text.setText(tension + "");
             material_text.setVisibility(View.VISIBLE);
             material_value.setVisibility(View.INVISIBLE);
@@ -165,9 +152,32 @@ public class ForceCalc extends AppCompatActivity {
         }
     }
 
+    private void checkValues(){
+        Spinner shape = (Spinner)findViewById(R.id.shape_spinner);
+        Spinner type = (Spinner) findViewById(R.id.type_spinner);
+        String type_str = type.getSelectedItem().toString().toLowerCase();
+        int shape_idx = shape.getSelectedItemPosition();
+        if (type_str.equals("smyk")){
+            ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                    R.array.prurez_array_short, android.R.layout.simple_spinner_item);
+            adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            shape.setAdapter(adapter3);
+            if(shape_idx < adapter3.getCount()){
+                shape.setSelection(shape_idx);
+            } else {
+                shape.setSelection(0);
+            }
+        } else {
+            ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                    R.array.prurez_array, android.R.layout.simple_spinner_item);
+            adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            shape.setAdapter(adapter3);
+            shape.setSelection(shape_idx);
+        }
+    }
+
     protected void onClick(View view) {
         Intent intent = new Intent(this, ResultActivity.class);
-        //String EXTRA_MESSAGE = "";
 
         EditText sideA = (EditText) findViewById(R.id.sideA);
         EditText sideB = (EditText) findViewById(R.id.sideB);
@@ -183,8 +193,6 @@ public class ForceCalc extends AppCompatActivity {
             String typ = ((Spinner) findViewById(R.id.type_spinner)).getSelectedItem().toString().toLowerCase();
             String material = ((Spinner) findViewById(R.id.material_spinner)).getSelectedItem().toString();
 
-            /*int resourceId = this.getResources().getIdentifier(typ + material, "integer", this.getPackageName());
-            int tension = this.getResources().getInteger(resourceId);*/
             int tension = 0;
             if (material.equals("Jiný:")){
                 tension = Integer.parseInt(((EditText) findViewById(R.id.material_value)).getText().toString());
@@ -203,10 +211,6 @@ public class ForceCalc extends AppCompatActivity {
             intent.putExtra(MESSAGE_TYPE, "force");
             startActivity(intent);
         }
-
-        /*int resourceId = this.getResources().
-                getIdentifier("app" + "_text", "string", this.getPackageName());*/
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

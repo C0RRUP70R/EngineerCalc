@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.bptestingapp.R;
-import com.example.bptestingapp.calcFc;
+import com.example.bptestingapp.auxiliary.calcFc;
 
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
 import static com.example.bptestingapp.MainActivity.MESSAGE_TYPE;

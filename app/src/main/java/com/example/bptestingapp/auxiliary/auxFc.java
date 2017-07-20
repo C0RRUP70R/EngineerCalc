@@ -1,9 +1,7 @@
 package com.example.bptestingapp.auxiliary;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.bptestingapp.calcFc;
 import com.example.bptestingapp.database.SQLiteDatabaseHandler;
 import com.example.bptestingapp.models.Tolerance;
 

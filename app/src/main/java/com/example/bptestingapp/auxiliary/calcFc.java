@@ -1,4 +1,4 @@
-package com.example.bptestingapp;
+package com.example.bptestingapp.auxiliary;
 
 /**
  * Created by C0RRUP70R on 16.01.2017.
@@ -58,7 +58,7 @@ public class calcFc {
         return modulus;
     }
 
-    public static double modulusRectTorq(double w, double h, char axis) {
+   /* public static double modulusRectTorq(double w, double h, char axis) {
         double modulus;
         switch (axis) {
             case 'x':
@@ -71,7 +71,7 @@ public class calcFc {
                 modulus = 0;
         }
         return modulus;
-    }
+    }*/
 
     public static double modulusSquareBend(double a) {
         double modulus;

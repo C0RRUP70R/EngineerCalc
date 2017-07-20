@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.bptestingapp.R;
 import com.example.bptestingapp.auxiliary.auxFc;
-import com.example.bptestingapp.calcFc;
+import com.example.bptestingapp.auxiliary.calcFc;
 
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
 import static com.example.bptestingapp.MainActivity.MESSAGE_SIDE;
