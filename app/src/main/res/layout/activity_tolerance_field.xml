@@ -57,7 +57,7 @@
             <Spinner
                 android:id="@+id/field_spinner"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="0dp"
@@ -70,7 +70,7 @@
             <Spinner
                 android:id="@+id/it_spinner"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="0dp"
@@ -104,7 +104,9 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="80dp"
                 android:layout_marginTop="64dp"
+
                 android:textAlignment="textEnd"
+                android:gravity="end"
                 android:textColor="#FF000000"
                 android:textSize="28sp"
                 app:layout_constraintHorizontal_bias="0.502"
@@ -118,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:textAlignment="textEnd"
+                android:gravity="end"
                 android:textColor="#FF000000"
                 app:layout_constraintLeft_toRightOf="@+id/diameter_text"
                 android:layout_marginBottom="4dp"
@@ -129,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:textAlignment="textEnd"
+                android:gravity="end"
                 android:textColor="#FF000000"
                 app:layout_constraintBottom_toBottomOf="@+id/diameter_text"
                 app:layout_constraintLeft_toRightOf="@+id/diameter_text"
@@ -155,7 +159,6 @@
                     android:layout_weight="0.55"
                     android:checked="true"
                     android:text="Díra"
-                    android:textAlignment="textStart"
                     tools:layout_editor_absoluteX="265dp"
                     tools:layout_editor_absoluteY="324dp" />
 
@@ -165,7 +168,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.49"
                     android:text="Hřídel"
-                    android:textAlignment="textStart"
                     tools:layout_editor_absoluteX="102dp"
                     tools:layout_editor_absoluteY="335dp" />
             </RadioGroup>
