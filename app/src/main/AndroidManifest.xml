@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bptestingapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/test_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/NewTestTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.RotCalc" />
+        <activity android:name=".activities.ResultActivity" />
+        <activity android:name=".activities.ForceCalc" />
+        <activity android:name=".activities.TensionCalc" />
+        <activity android:name=".activities.ToleranceCalc"></activity>
+    </application>
+
+</manifest>

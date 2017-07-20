@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="tah11343">90</integer>
+    <integer name="tah11373">100</integer>
+    <integer name="tah11423">115</integer>
+    <integer name="tah11500">140</integer>
+    <integer name="tah11600">150</integer>
+    <integer name="tah11700">210</integer>
+    <integer name="tah12020">115</integer>
+    <integer name="tah12060">175</integer>
+
+    <integer name="tlak11343">90</integer>
+    <integer name="tlak11373">100</integer>
+    <integer name="tlak11423">115</integer>
+    <integer name="tlak11500">140</integer>
+    <integer name="tlak11600">150</integer>
+    <integer name="tlak11700">210</integer>
+    <integer name="tlak12020">115</integer>
+    <integer name="tlak12060">175</integer>
+
+    <integer name="ohyb11343">100</integer>
+    <integer name="ohyb11373">110</integer>
+    <integer name="ohyb11423">120</integer>
+    <integer name="ohyb11500">150</integer>
+    <integer name="ohyb11600">170</integer>
+    <integer name="ohyb11700">230</integer>
+    <integer name="ohyb12020">125</integer>
+    <integer name="ohyb12060">190</integer>
+
+    <integer name="smyk11343">55</integer>
+    <integer name="smyk11373">65</integer>
+    <integer name="smyk11423">70</integer>
+    <integer name="smyk11500">85</integer>
+    <integer name="smyk11600">105</integer>
+    <integer name="smyk11700">125</integer>
+    <integer name="smyk12020">70</integer>
+    <integer name="smyk12060">110</integer>
+
+</resources>

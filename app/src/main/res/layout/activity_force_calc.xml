@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_force_calc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.example.bptestingapp.activities.ForceCalc">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Výpočet maximálního povoleného zatížení"
+                android:textColor="#FF000000"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/material_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:textAlignment="center"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/textView4"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/nature_spinner" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="Typ zatížení: "
+                android:textColor="#FF000000"
+                app:layout_constraintBottom_toBottomOf="@+id/type_spinner"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/type_spinner" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Materiál: "
+                android:textColor="#FF000000"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="@+id/material_spinner"
+                app:layout_constraintBottom_toBottomOf="@+id/material_spinner" />
+
+            <Spinner
+                android:id="@+id/type_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@+id/textView9"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Průřez:"
+                android:textColor="#FF000000"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="@+id/shape_spinner"
+                app:layout_constraintBottom_toBottomOf="@+id/shape_spinner" />
+
+            <Spinner
+                android:id="@+id/shape_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/textView3"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/material_value"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <EditText
+                android:id="@+id/sideA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="mm"
+                android:inputType="numberDecimal"
+                app:layout_constraintLeft_toRightOf="@+id/textA"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shape_spinner"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <EditText
+                android:id="@+id/sideB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="mm"
+                android:inputType="numberDecimal"
+                app:layout_constraintLeft_toRightOf="@+id/textB"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sideA"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/textA"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Strana a:"
+                android:textColor="#FF000000"
+                app:layout_constraintBottom_toTopOf="@+id/sideB"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sideA"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:id="@+id/textB"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Strana b:"
+                android:textColor="#FF000000"
+                app:layout_constraintBottom_toBottomOf="@+id/sideB"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sideB"
+                android:layout_marginStart="16dp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Calculate"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/sideB"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <EditText
+                android:id="@+id/material_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="132dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="MPa"
+                android:inputType="numberDecimal"
+                android:visibility="invisible"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/material_spinner"
+                android:layout_marginStart="132dp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/material_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="132dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:textColor="#FF000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/shape_spinner"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/material_spinner"
+                android:layout_marginStart="132dp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="MPa:"
+                android:textColor="#FF000000"
+                app:layout_constraintBottom_toBottomOf="@+id/material_text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/material_text"
+                app:layout_constraintTop_toTopOf="@+id/material_text"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:text="Druh zatížení:"
+                android:textColor="#FF000000"
+                app:layout_constraintBottom_toBottomOf="@+id/nature_spinner"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/nature_spinner" />
+
+            <Spinner
+                android:id="@+id/nature_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/textView6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/type_spinner" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</RelativeLayout>

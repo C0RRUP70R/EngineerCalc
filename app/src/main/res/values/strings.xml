@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Engineer Calc</string>
+    <string name="app_text">\nVyberte operaci, kterou chcete provést:\n</string>
+    <string-array name="type_array">
+        <item>Tah</item>
+        <item>Tlak</item>
+        <item>Ohyb</item>
+        <item>Smyk</item>
+    </string-array>
+    <string-array name="nature_array">
+        <item>Statický</item>
+        <item>Míjivý</item>
+        <item>Střídavý</item>
+    </string-array>
+    <string-array name="material_array">
+        <item>11343</item>
+        <item>11373</item>
+        <item>11423</item>
+        <item>11500</item>
+        <item>11600</item>
+        <item>11700</item>
+        <item>12020</item>
+        <item>12060</item>
+        <item>Jiný: </item>
+    </string-array>
+    <string-array name="material_array_short">
+        <item>11343</item>
+        <item>11373</item>
+        <item>11423</item>
+        <item>11500</item>
+        <item>11600</item>
+        <item>11700</item>
+        <item>12020</item>
+        <item>12060</item>
+    </string-array>
+    <string-array name="prurez_array">
+        <item>Obdélník</item>
+        <item>Kruh</item>
+        <item>Čtverec</item>
+    </string-array>
+    <string-array name="hole_tolerance_array">
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>JS</item>
+        <item>J</item>
+        <item>K</item>
+        <item>M</item>
+        <item>N</item>
+        <item>P</item>
+        <item>R</item>
+        <item>S</item>
+    </string-array>
+    <string-array name="tolerance_array">
+        <item>e</item>
+        <item>f</item>
+        <item>g</item>
+        <item>h</item>
+        <item>js</item>
+        <item>j</item>
+        <item>k</item>
+        <item>m</item>
+        <item>n</item>
+        <item>p</item>
+        <item>r</item>
+        <item>s</item>
+    </string-array>
+    <string-array name="e">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="f">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="g">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <string-array name="h">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="js">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="j">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="k">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="m">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="n">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="p">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="r">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="s">
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <string name="rot_info">Zadejte základní parametry pro výpočet</string>
+    <string name="tens_info">Výpočet vnitřního napětí materiálu</string>
+    <string name="title_activity_tension_calc">TensionCalc</string>
+</resources>
