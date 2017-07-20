@@ -43,6 +43,10 @@ public class ToleranceCalc extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         field_spinner.setAdapter(adapter);
 
+        ((TextView) findViewById(R.id.diameter_text)).setText("0");
+        ((TextView) findViewById(R.id.upper)).setText("0");
+        ((TextView) findViewById(R.id.lower)).setText("0");
+
         field_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -100,7 +104,9 @@ public class ToleranceCalc extends AppCompatActivity {
                 TextView tv = (TextView) findViewById(R.id.diameter_text);
                 tv.setText(input.getText().toString());
                 if (input.getText().length() == 0) {
-                    tv.setText(" ");
+                    tv.setText("0");
+                    ((TextView) findViewById(R.id.upper)).setText("0");
+                    ((TextView) findViewById(R.id.lower)).setText("0");
                 }
                 compute();
             }
@@ -145,7 +151,7 @@ public class ToleranceCalc extends AppCompatActivity {
 
     private void compute() {
         String input = ((EditText) findViewById(R.id.diameterInput)).getText().toString();
-        if(input.length() > 0) {
+        if (input.length() > 0) {
             String field = ((Spinner) findViewById(R.id.field_spinner)).getSelectedItem().toString();
             String it = ((Spinner) findViewById(R.id.it_spinner)).getSelectedItem().toString();
             it = "IT" + it;
@@ -160,12 +166,12 @@ public class ToleranceCalc extends AppCompatActivity {
 
             Double ES = tolerance.getES();
             Double EI = tolerance.getEI();
-            String ESText =  String.format("%.4f", ES);
-            String EIText =  String.format("%.4f", EI);
-            if(ES > 0.0){
+            String ESText = String.format("%.4f", ES);
+            String EIText = String.format("%.4f", EI);
+            if (ES > 0.0) {
                 ESText = "+" + ESText;
             }
-            if(EI> 0.0){
+            if (EI > 0.0) {
                 EIText = "+" + EIText;
             }
 
