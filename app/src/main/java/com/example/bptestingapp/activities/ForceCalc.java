@@ -1,9 +1,9 @@
 package com.example.bptestingapp.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.example.bptestingapp.R;
 import com.example.bptestingapp.auxiliary.auxFc;
 import com.example.bptestingapp.auxiliary.calcFc;
-import com.example.bptestingapp.database.SQLiteDatabaseHandler;
 
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
 import static com.example.bptestingapp.MainActivity.MESSAGE_TYPE;
@@ -29,7 +28,9 @@ public class ForceCalc extends AppCompatActivity {
         setContentView(R.layout.activity_force_calc);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         Spinner type_spinner = (Spinner) findViewById(R.id.type_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -115,17 +116,17 @@ public class ForceCalc extends AppCompatActivity {
             case "kruh":
                 sideB.setVisibility(View.INVISIBLE);
                 textB.setVisibility(View.INVISIBLE);
-                textA.setText("Průměr (mm):");
+                textA.setText(getString(R.string.sideA_diameter));
                 break;
             case "čtverec":
                 sideB.setVisibility(View.INVISIBLE);
                 textB.setVisibility(View.INVISIBLE);
-                textA.setText("Strana a (mm):");
+                textA.setText(getString(R.string.sideA_length));
                 break;
             case "obdélník":
                 sideB.setVisibility(View.VISIBLE);
                 textB.setVisibility(View.VISIBLE);
-                textA.setText("Strana a (mm):");
+                textA.setText(getString(R.string.sideA_length));
                 break;
         }
     }
@@ -137,12 +138,10 @@ public class ForceCalc extends AppCompatActivity {
         TextView material_text = (TextView) findViewById(R.id.material_text);
         EditText material_value = (EditText) findViewById(R.id.material_value);
         if(!material.equals("Jiný:")) {
-           /* int resourceId = this.getResources().getIdentifier(typ + material, "integer", this.getPackageName());
-            int tension = this.getResources().getInteger(resourceId);*/
-            SQLiteDatabaseHandler db = new SQLiteDatabaseHandler(this);
             int tension = getTension(material, typ, nature, this);
 
-            material_text.setText(tension + "");
+            String tension_txt = tension + "";
+            material_text.setText(tension_txt);
             material_text.setVisibility(View.VISIBLE);
             material_value.setVisibility(View.INVISIBLE);
         } else {
@@ -193,7 +192,7 @@ public class ForceCalc extends AppCompatActivity {
             String typ = ((Spinner) findViewById(R.id.type_spinner)).getSelectedItem().toString().toLowerCase();
             String material = ((Spinner) findViewById(R.id.material_spinner)).getSelectedItem().toString();
 
-            int tension = 0;
+            int tension;
             if (material.equals("Jiný:")){
                 tension = Integer.parseInt(((EditText) findViewById(R.id.material_value)).getText().toString());
             } else {

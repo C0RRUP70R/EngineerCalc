@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.bptestingapp.auxiliary.DbEntries;
 import com.example.bptestingapp.models.Material;
-import com.example.bptestingapp.models.ToleranceField;
 
 import java.util.LinkedList;
 import java.util.List;

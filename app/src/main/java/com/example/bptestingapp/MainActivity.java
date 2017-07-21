@@ -2,10 +2,11 @@ package com.example.bptestingapp;
 
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.bptestingapp.activities.CogwheelCalc;
 import com.example.bptestingapp.activities.ForceCalc;
 import com.example.bptestingapp.activities.RotCalc;
 import com.example.bptestingapp.activities.TensionCalc;
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startToleranceActivity(View view){
         Intent intent = new Intent(this, ToleranceCalc.class);
+        startActivity(intent);
+    }
+
+    public void startCogwheelActivity(View view){
+        Intent intent = new Intent(this, CogwheelCalc.class);
         startActivity(intent);
     }
 

@@ -1,8 +1,8 @@
 package com.example.bptestingapp.activities;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -18,10 +18,7 @@ import android.widget.TextView;
 
 import com.example.bptestingapp.R;
 import com.example.bptestingapp.auxiliary.InputFilterMinMax;
-import com.example.bptestingapp.database.SQLiteDatabaseHandler;
 import com.example.bptestingapp.models.Tolerance;
-
-import java.util.List;
 
 import static com.example.bptestingapp.auxiliary.auxFc.getRangeEP;
 import static com.example.bptestingapp.auxiliary.auxFc.getRangeRS;
@@ -35,7 +32,9 @@ public class ToleranceCalc extends AppCompatActivity {
         setContentView(R.layout.activity_tolerance_field);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         Spinner field_spinner = (Spinner) findViewById(R.id.field_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

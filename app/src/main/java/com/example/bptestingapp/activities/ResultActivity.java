@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.example.bptestingapp.R;
 
-
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
 import static com.example.bptestingapp.MainActivity.MESSAGE_SIDE;
 import static com.example.bptestingapp.MainActivity.MESSAGE_SIDE2;
@@ -31,7 +30,9 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
 
         Intent intent = getIntent();
