@@ -205,7 +205,7 @@ public class ForceCalc extends AppCompatActivity {
             double area = auxFc.getArea(typ, areaType, sideA_txt, sideB_txt);
             double force = calcFc.maxForce(area, tension);
 
-            String message = force + "";
+            String message = String.format("%.2f", force);
             intent.putExtra(MESSAGE_MAIN, message);
             intent.putExtra(MESSAGE_TYPE, "force");
             startActivity(intent);

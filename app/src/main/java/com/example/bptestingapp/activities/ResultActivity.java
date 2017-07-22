@@ -51,7 +51,7 @@ public class ResultActivity extends AppCompatActivity {
             case "force":
                 textType.setText("Maximální zatížení");
                 mainText.setText("Síla:");
-                textOutput.setText(message + "N");
+                textOutput.setText(message + " N");
                 break;
             case "tension":
                 textType.setText("Vnitřní napětí materiálu");

@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.bptestingapp.activities.CogwheelCalc;
 import com.example.bptestingapp.activities.ForceCalc;
+import com.example.bptestingapp.activities.MaterialSelection;
 import com.example.bptestingapp.activities.RotCalc;
 import com.example.bptestingapp.activities.TensionCalc;
 import com.example.bptestingapp.activities.ToleranceCalc;
@@ -42,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startCogwheelActivity(View view){
         Intent intent = new Intent(this, CogwheelCalc.class);
+        startActivity(intent);
+    }
+
+    public void startMaterialSelection(View view){
+        Intent intent = new Intent(this, MaterialSelection.class);
         startActivity(intent);
     }
 
