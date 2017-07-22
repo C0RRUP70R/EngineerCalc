@@ -4,7 +4,7 @@ import android.text.InputFilter;
 import android.text.Spanned;
 
 /**
- * Created by C0RRUP70R on 21.07.2017.
+ * Created by C0RRUP70R.
  */
 
 public class InputFilterMinMaxInt implements InputFilter {

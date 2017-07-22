@@ -1,5 +1,6 @@
 package com.example.bptestingapp.activities;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.bptestingapp.R;
-import com.example.bptestingapp.auxiliary.InputFilterMinMax;
 import com.example.bptestingapp.auxiliary.InputFilterMinMaxInt;
+
+import static com.example.bptestingapp.auxiliary.CogWheelFc.*;
 
 public class CogwheelCalc extends AppCompatActivity {
 
@@ -34,6 +36,9 @@ public class CogwheelCalc extends AppCompatActivity {
                 R.array.modul, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         modul_spinner.setAdapter(adapter);
+        if(modul_spinner.getCount() > 18){
+            modul_spinner.setSelection(18);
+        }
 
         modul_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -49,7 +54,7 @@ public class CogwheelCalc extends AppCompatActivity {
             }
         });
 
-        final EditText input = (EditText) findViewById(R.id.zub_val);
+        final EditText input = (EditText) findViewById(R.id.cog_count);
         input.setFilters(new InputFilter[]{new InputFilterMinMaxInt("1", "500")});
         input.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,10 +63,8 @@ public class CogwheelCalc extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                TextView tv = (TextView) findViewById(R.id.diameter_text);
-                tv.setText(input.getText().toString());
                 if (input.getText().length() == 0) {
-                    //TODO
+                    setAllFieldsZero();
                 } else {
                     calculate();
                 }
@@ -74,15 +77,35 @@ public class CogwheelCalc extends AppCompatActivity {
     }
 
     private boolean checkInput() {
-        String input = ((EditText) findViewById(R.id.zub_val)).getText().toString();
-        if (input.length() > 0) {
-            return true;
-        }
-        return false;
+        String input = ((EditText) findViewById(R.id.cog_count)).getText().toString();
+        return input.length() > 0;
     }
 
     private void calculate() {
+        String modul_txt = ((Spinner) findViewById(R.id.modul_spinner)).getSelectedItem().toString();
+        String count_txt = ((EditText) findViewById(R.id.cog_count)).getText().toString();
 
+        double modul = Double.parseDouble(modul_txt);
+        int count = Integer.parseInt(count_txt);
+
+        ((TextView)findViewById(R.id.text_roztec_kr)).setText(getPitchDiameterStr(modul, count));
+        ((TextView)findViewById(R.id.text_hlav_kr)).setText(getHeadDiameterStr(modul, count));
+        ((TextView)findViewById(R.id.text_pata_kr)).setText(getFootDiameterStr(modul, count));
+        ((TextView)findViewById(R.id.text_roztec)).setText(getPitchStr(modul));
+        ((TextView)findViewById(R.id.text_vrch_vule)).setText(getOutletStr(modul));
+        ((TextView)findViewById(R.id.text_vyska_hlavy)).setText(getHeadStr(modul));
+        ((TextView)findViewById(R.id.text_vyska_paty)).setText(getFootStr(modul));
+        ((TextView)findViewById(R.id.text_vyska_zubu)).setText(getCogHeightStr(modul));
+        ((TextView)findViewById(R.id.text_tl_zub)).setText(getCogWidth(modul));
+        ((TextView)findViewById(R.id.text_zub_mez)).setText(getCogMarStr(modul));
+    }
+
+    private void setAllFieldsZero(){
+        ConstraintLayout results = (ConstraintLayout)findViewById(R.id.constraintLayout);
+        int count = results.getChildCount();
+        for(int i = 0; i < count; i++){
+            ((TextView)results.getChildAt(i)).setText("0 mm");
+        }
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
