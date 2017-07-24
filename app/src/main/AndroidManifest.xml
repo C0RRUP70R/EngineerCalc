@@ -19,7 +19,11 @@
         <activity android:name=".activities.ResultActivity" />
         <activity android:name=".activities.ForceCalc" />
         <activity android:name=".activities.TensionCalc" />
-        <activity android:name=".activities.ToleranceCalc"></activity>
+        <activity android:name=".activities.ToleranceCalc" />
+        <activity android:name=".activities.CogwheelCalc" />
+        <activity android:name=".activities.MaterialSelection" />
+        <activity android:name=".activities.Material" />
+        <activity android:name=".activities.CogwheelRevCalc"></activity>
     </application>
 
 </manifest>

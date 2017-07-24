@@ -31,14 +31,11 @@ public class CogwheelCalc extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        Spinner modul_spinner = (Spinner) findViewById(R.id.modul_spinner);
+        final Spinner modul_spinner = (Spinner) findViewById(R.id.modul_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.modul, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         modul_spinner.setAdapter(adapter);
-        if(modul_spinner.getCount() > 18){
-            modul_spinner.setSelection(18);
-        }
 
         modul_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -46,6 +43,15 @@ public class CogwheelCalc extends AppCompatActivity {
                 if (checkInput()) {
                     calculate();
                 }
+                double modul = Double.parseDouble(modul_spinner.getSelectedItem().toString());
+                ((TextView) findViewById(R.id.text_roztec)).setText(getPitchStr(modul));
+                ((TextView) findViewById(R.id.text_vrch_vule)).setText(getOutletStr(modul));
+                ((TextView) findViewById(R.id.text_vyska_hlavy)).setText(getHeadStr(modul));
+                ((TextView) findViewById(R.id.text_vyska_paty)).setText(getFootStr(modul));
+                ((TextView) findViewById(R.id.text_vyska_zubu)).setText(getCogHeightStr(modul));
+                ((TextView) findViewById(R.id.text_tl_zub)).setText(getCogWidth(modul));
+                ((TextView) findViewById(R.id.text_zub_mez)).setText(getCogMarStr(modul));
+
             }
 
             @Override
@@ -53,6 +59,11 @@ public class CogwheelCalc extends AppCompatActivity {
 
             }
         });
+
+        if (modul_spinner.getCount() > 18) {
+            modul_spinner.setSelection(18);
+        }
+
 
         final EditText input = (EditText) findViewById(R.id.cog_count);
         input.setFilters(new InputFilter[]{new InputFilterMinMaxInt("1", "500")});
@@ -88,23 +99,23 @@ public class CogwheelCalc extends AppCompatActivity {
         double modul = Double.parseDouble(modul_txt);
         int count = Integer.parseInt(count_txt);
 
-        ((TextView)findViewById(R.id.text_roztec_kr)).setText(getPitchDiameterStr(modul, count));
-        ((TextView)findViewById(R.id.text_hlav_kr)).setText(getHeadDiameterStr(modul, count));
-        ((TextView)findViewById(R.id.text_pata_kr)).setText(getFootDiameterStr(modul, count));
-        ((TextView)findViewById(R.id.text_roztec)).setText(getPitchStr(modul));
+        ((TextView) findViewById(R.id.text_roztec_kr)).setText(getPitchDiameterStr(modul, count));
+        ((TextView) findViewById(R.id.text_hlav_kr)).setText(getHeadDiameterStr(modul, count));
+        ((TextView) findViewById(R.id.text_pata_kr)).setText(getFootDiameterStr(modul, count));
+       /* ((TextView)findViewById(R.id.text_roztec)).setText(getPitchStr(modul));
         ((TextView)findViewById(R.id.text_vrch_vule)).setText(getOutletStr(modul));
         ((TextView)findViewById(R.id.text_vyska_hlavy)).setText(getHeadStr(modul));
         ((TextView)findViewById(R.id.text_vyska_paty)).setText(getFootStr(modul));
         ((TextView)findViewById(R.id.text_vyska_zubu)).setText(getCogHeightStr(modul));
         ((TextView)findViewById(R.id.text_tl_zub)).setText(getCogWidth(modul));
-        ((TextView)findViewById(R.id.text_zub_mez)).setText(getCogMarStr(modul));
+        ((TextView)findViewById(R.id.text_zub_mez)).setText(getCogMarStr(modul));*/
     }
 
-    private void setAllFieldsZero(){
-        ConstraintLayout results = (ConstraintLayout)findViewById(R.id.constraintLayout);
+    private void setAllFieldsZero() {
+        ConstraintLayout results = (ConstraintLayout) findViewById(R.id.constraintLayout);
         int count = results.getChildCount();
-        for(int i = 0; i < count; i++){
-            ((TextView)results.getChildAt(i)).setText("0 mm");
+        for (int i = 0; i < count; i++) {
+            ((TextView) results.getChildAt(i)).setText("0 mm");
         }
     }
 

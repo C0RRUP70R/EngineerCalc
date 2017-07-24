@@ -34,7 +34,11 @@
         <item>12060</item>
     </string-array>
     <string-array name="prurez_array">
+        <item>Kruh</item>
+        <item>Čtverec</item>
         <item>Obdélník</item>
+    </string-array>
+    <string-array name="prurez_array_short">
         <item>Kruh</item>
         <item>Čtverec</item>
     </string-array>
@@ -145,7 +149,85 @@
         <item>6</item>
         <item>7</item>
     </string-array>
+    <string-array name="modul">
+        <item>0.05</item>
+        <item>0.06</item>
+        <item>0.08</item>
+        <item>0.1</item>
+        <item>0.12</item>
+        <item>0.15</item>
+        <item>0.2</item>
+        <item>0.25</item>
+        <item>0.3</item>
+        <item>0.4</item>
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.8</item>
+        <item>1</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+        <item>25</item>
+        <item>32</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+    </string-array>
     <string name="rot_info">Zadejte základní parametry pro výpočet</string>
     <string name="tens_info">Výpočet vnitřního napětí materiálu</string>
+    <string name="cog_info">Výpočet ozubeného kola</string>
     <string name="title_activity_tension_calc">TensionCalc</string>
+    <string name="sideA_length">Strana a (mm):</string>
+    <string name="sideA_diameter">Průměr (mm):</string>
+    <string name="modul_txt">Modul:</string>
+    <string name="pocet_z">Počet zubů:</string>
+    <string name="roztec_kr">Roztěčná kružnice:</string>
+    <string name="roztec">Rozteč:</string>
+    <string name="vrcholova_vule">Vrcholová vůle:</string>
+    <string name="vyska_hlavy">Výška hlavy:</string>
+    <string name="vyska_paty">Výška paty:</string>
+    <string name="vyska_zubu">Výška zubu:</string>
+    <string name="hlavova_kr">Hlavová kružnice:</string>
+    <string name="patni_kr">Patní kružnice:</string>
+    <string name="zub_tl">Tloušťka zubu:</string>
+    <string name="zub_mez">Zubní mezera:</string>
+    <string name="zub_sir">Šířka zubu:</string>
+    <string name="zero_mm">0 mm</string>
+    <string name="sect_prod">Výroba</string>
+    <string name="sect_const">Konstrukce</string>
+    <string name="sect_mat">Materiály</string>
+    <string name="butt_rot">Výpočet otáček</string>
+    <string name="butt_tol">Tolerance rozměrů</string>
+    <string name="butt_force">Výpočet povoleného zatížení</string>
+    <string name="butt_tens">Výpočet vnitřního napětí</string>
+    <string name="butt_cogwheel">Výpočet ozubeného kola</string>
+    <string name="butt_cogwheel_rev">Zpětný výpočet ozubeného kola</string>
+    <string name="sect_mat_sel">Ocel</string>
+
+    <string name="butt_11343">11343</string>
+    <string name="butt_11373">11373</string>
+    <string name="butt_11423">11423</string>
+    <string name="butt_11500">11500</string>
+    <string name="butt_11600">11600</string>
+    <string name="butt_11700">11700</string>
+    <string name="butt_12020">12020</string>
+    <string name="butt_12060">12060</string>
+
+    <string name="max_tens">Maximální pevnost:</string>
+    <string name="wheel_diamter">Průměr kola:</string>
+    <string name="zero">0</string>
+    <string name="modul_txt_poz">Modul: *</string>
+    <string name="hlavova_kr_poz">Hlavová kružnice: **</string>
 </resources>

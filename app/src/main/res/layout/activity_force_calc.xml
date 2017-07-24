@@ -160,13 +160,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Strana a:"
+                android:text="Strana a (mm):"
                 android:textColor="#FF000000"
                 app:layout_constraintBottom_toTopOf="@+id/sideB"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sideA"
-                android:layout_marginStart="16dp" />
+                app:layout_constraintTop_toTopOf="@+id/sideA" />
 
             <TextView
                 android:id="@+id/textB"
@@ -174,13 +174,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Strana b:"
+                android:text="Strana b (mm):"
                 android:textColor="#FF000000"
                 app:layout_constraintBottom_toBottomOf="@+id/sideB"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sideB"
-                android:layout_marginStart="16dp" />
+                app:layout_constraintTop_toTopOf="@+id/sideB" />
 
             <Button
                 android:id="@+id/button2"

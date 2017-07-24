@@ -1,40 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="max11343">320 MPa</string>
+    <string name="max11373">340 MPa</string>
+    <string name="max11423">420 MPa</string>
+    <string name="max11500">470 MPa</string>
+    <string name="max11600">590 MPa</string>
+    <string name="max11700">685 MPa</string>
+    <string name="max12020">380 MPa</string>
+    <string name="max12060">600 MPa</string>
 
-    <integer name="tah11343">90</integer>
-    <integer name="tah11373">100</integer>
-    <integer name="tah11423">115</integer>
-    <integer name="tah11500">140</integer>
-    <integer name="tah11600">150</integer>
-    <integer name="tah11700">210</integer>
-    <integer name="tah12020">115</integer>
-    <integer name="tah12060">175</integer>
-
-    <integer name="tlak11343">90</integer>
-    <integer name="tlak11373">100</integer>
-    <integer name="tlak11423">115</integer>
-    <integer name="tlak11500">140</integer>
-    <integer name="tlak11600">150</integer>
-    <integer name="tlak11700">210</integer>
-    <integer name="tlak12020">115</integer>
-    <integer name="tlak12060">175</integer>
-
-    <integer name="ohyb11343">100</integer>
-    <integer name="ohyb11373">110</integer>
-    <integer name="ohyb11423">120</integer>
-    <integer name="ohyb11500">150</integer>
-    <integer name="ohyb11600">170</integer>
-    <integer name="ohyb11700">230</integer>
-    <integer name="ohyb12020">125</integer>
-    <integer name="ohyb12060">190</integer>
-
-    <integer name="smyk11343">55</integer>
-    <integer name="smyk11373">65</integer>
-    <integer name="smyk11423">70</integer>
-    <integer name="smyk11500">85</integer>
-    <integer name="smyk11600">105</integer>
-    <integer name="smyk11700">125</integer>
-    <integer name="smyk12020">70</integer>
-    <integer name="smyk12060">110</integer>
-
+    <string name="text11343">Konstrukční ocel, tavná svařitelnost zaručená.\nVhodná pro pokovování a k cementování\n\nSvařované součásti menších tlouštěk namáhané staticky, popř.
+        i mírně dynamicky, součásti svařované tlakem.\n
+    Kované součásti energetických zařízení do 300°C, drobné lisované a tvářené výrobky, stavební a nábytkové kování, třmeny, rozpěrky, páky, zděře, hřebíky, svorníky,
+    drážky.\nMálo namáhané nýtované a svařované konstrukce.</string>
+    <string name="text11373">Konstrukční ocel, tavná svařitelnost zaručená.\n\nJednoduché, mírně namáhané, kované, lisované, zastudena ohýbané součásti.\nPlechy na strojní konstrukce,
+     páky, šrouby, zděře.\nProfilové materiály.\nSoučásti do 300°C, mostní, jeřábové a stropní konstrukce namáhané staticky a mírně dynamicky.</string>
+    <string name="text11423">Konstrukční ocel, tavná svařitelnost zaručená.\n\nMírně namáhané hřídele, čepy, ozubená kola, kde se nevyžaduje odolnost proti opotřebení.\nZápustkové
+        výkovky a výlisky.\nSoučásti železničních vozidel.</string>
+    <string name="text11500">Konstrukční ocel, tavná svařitelnost obtížná.\n\nStrojní součásti namáhané staticky i dynamicky: hřídele, ozubená kola, strojní součásti soustružené,
+    čepy, kolíky, podložky. příruby, pouzdra, základové desky, šrouby, matice, kladky.\nKovové součásti tepelných energetických zařízení</string>
+    <string name="text11600">Tavná svařitelnost obtížná.\n\nJako ocel 11500, ale pro větší namáhání.\nKované a lisované součásti vystavené velkému tlaku (klíny, čepy, pastorky, šneky, vřetena lisů).</string>
+    <string name="text11700">Pro svařované konstrukce se nepoužívá.\n\nJako ocel 11600, ale pro větší nestřídavá namáhání, jinak nutno zušlechtit.\nVýkovky a výlisky o velké tvrdosti bez
+    tepelného zpracování, držáky soustružnických nožů.</string>
+    <string name="text12020">Konstrukční ocel k cementování, tavná svařitelnost zaručená.\n\nMéně namáhané cementované součásti, např. čepy, pouzdra, šrouby, vačkové hřídele, ozubená a řetězová kola,
+    lisované součásti.\nNástroje a měřidla (kalibry, trny, frézy na dřevo).</string>
+    <string name="text12060">Konstrukční ocel k zušlechťování.\n\nMéně namáhané klikové a vačkové hřídele automobilů, hřídele turbokompresorů, ozubená kola, pístnice, šrouby.</string>
 </resources>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.bptestingapp.activities.CogwheelCalc;
+import com.example.bptestingapp.activities.CogwheelRevCalc;
 import com.example.bptestingapp.activities.ForceCalc;
 import com.example.bptestingapp.activities.MaterialSelection;
 import com.example.bptestingapp.activities.RotCalc;
@@ -44,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startCogwheelActivity(View view){
         Intent intent = new Intent(this, CogwheelCalc.class);
+        startActivity(intent);
+    }
+
+    public void startCogwheelRevActivity(View view){
+        Intent intent = new Intent(this, CogwheelRevCalc.class);
         startActivity(intent);
     }
 

@@ -60,4 +60,8 @@ public class CogWheelFc {
         double sm = (Math.PI/2) * m;
         return String.format("%.2f", sm) + "mm";
     }
+
+    public static double getMod(double diameter, int cogCount){
+        return diameter/(cogCount + 2);
+    }
 }
