@@ -103,34 +103,10 @@ public class calcFc {
         return modulus;
     }
 
-    private static double alpha(double h, double w) {
-        double ret;
-        double tmp = h / w;
-        if (tmp < 1.2) {
-            ret = 0.208;
-        } else if (tmp < 1.5) {
-            ret = 0.219;
-        } else if ((int) tmp < 2) {
-            ret = 0.231;
-        } else if ((int) tmp < 3) {
-            ret = 0.246;
-        } else if ((int) tmp < 5) {
-            ret = 0.267;
-        } else if ((int) tmp < 10) {
-            ret = 0.291;
-        } else if ((int) tmp == 10) {
-            ret = 0.312;
-        } else ret = 0.333;
 
-        return ret;
-    }
 
-    private static double beta(double h, double w) {
-        double ret;
-        double tmp = h / w;
 
-        return 0;
-    }
+
 
 
 }

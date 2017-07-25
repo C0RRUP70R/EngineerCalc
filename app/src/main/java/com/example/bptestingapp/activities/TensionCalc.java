@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.bptestingapp.R;
+import com.example.bptestingapp.auxiliary.InputFilterMinMax;
 import com.example.bptestingapp.auxiliary.auxFc;
 import com.example.bptestingapp.auxiliary.calcFc;
 
@@ -63,6 +65,13 @@ public class TensionCalc extends AppCompatActivity {
                 R.array.nature_array, android.R.layout.simple_spinner_item);
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         nature_spinner.setAdapter(adapter4);
+
+        final EditText force_input = (EditText) findViewById(R.id.forceInput);
+        force_input.setFilters(new InputFilter[]{new InputFilterMinMax("0", "250000")});
+        final EditText sideA_input = (EditText) findViewById(R.id.sideA);
+        sideA_input.setFilters(new InputFilter[]{new InputFilterMinMax("0", "250")});
+        final EditText sideB_input = (EditText) findViewById(R.id.sideB);
+        sideB_input.setFilters(new InputFilter[]{new InputFilterMinMax("0", "250")});
     }
 
     private void switchInput(String item) {
@@ -88,7 +97,7 @@ public class TensionCalc extends AppCompatActivity {
         }
     }
 
-    protected void onClick(View view) {
+    public void onClick(View view) {
         Intent intent = new Intent(this, ResultActivity.class);
 
         EditText sideA = (EditText) findViewById(R.id.sideA);

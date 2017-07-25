@@ -24,11 +24,16 @@ public class InputFilterMinMax implements InputFilter {
     @Override
     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
         try {
-            double input = Double.parseDouble(dest.toString() + source.toString());
-            if((input + "").length() < 8) {
-                if (isInRange(min, max, input))
-                    return null;
-            } else{
+            String test = dest.toString() + source.toString();
+            if (test.length() <= (end + "").length() + 4) {
+                double input = Double.parseDouble(test);
+                if ((input + "").length() < 8) {
+                    if (isInRange(min, max, input))
+                        return null;
+                } else {
+                    return "";
+                }
+            } else {
                 return "";
             }
         } catch (NumberFormatException nfe) {

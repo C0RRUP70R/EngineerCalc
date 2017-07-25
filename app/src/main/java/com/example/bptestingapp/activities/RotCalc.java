@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 import com.example.bptestingapp.R;
+import com.example.bptestingapp.auxiliary.InputFilterMinMax;
+import com.example.bptestingapp.auxiliary.InputFilterMinMaxInt;
 import com.example.bptestingapp.auxiliary.calcFc;
 
 import static com.example.bptestingapp.MainActivity.MESSAGE_MAIN;
@@ -22,7 +25,14 @@ public class RotCalc extends AppCompatActivity {
         setContentView(R.layout.activity_rot_calc);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        final EditText speed_input = (EditText) findViewById(R.id.edit_speed);
+        speed_input.setFilters(new InputFilter[]{new InputFilterMinMaxInt("1", "200")});
+        final EditText diameter_input = (EditText) findViewById(R.id.edit_diameter);
+        diameter_input.setFilters(new InputFilter[]{new InputFilterMinMax("1", "500")});
     }
 
 

@@ -230,4 +230,7 @@
     <string name="zero">0</string>
     <string name="modul_txt_poz">Modul: *</string>
     <string name="hlavova_kr_poz">Hlavová kružnice: **</string>
+    <string name="com_star">*   Vypočtená hodnota nemusí odpovídat normovaným hodnotám modulu</string>
+    <string name="com_2star">** Hodnota průměru hlavové kružnice je rovna průměru kola</string>
+    <string name="butt_ok">OK</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.bptestingapp.R;
+import com.example.bptestingapp.auxiliary.InputFilterMinMax;
+import com.example.bptestingapp.auxiliary.InputFilterMinMaxInt;
 import com.example.bptestingapp.auxiliary.auxFc;
 import com.example.bptestingapp.auxiliary.calcFc;
 
@@ -41,7 +44,7 @@ public class ForceCalc extends AppCompatActivity {
         type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                checkValues();
+               // checkValues();
                 switchInputValue();
             }
 
@@ -106,6 +109,13 @@ public class ForceCalc extends AppCompatActivity {
 
             }
         });
+
+        final EditText material_input = (EditText) findViewById(R.id.material_value);
+        material_input.setFilters(new InputFilter[]{new InputFilterMinMax("1", "1500")});
+        final EditText sideA_input = (EditText) findViewById(R.id.sideA);
+        sideA_input.setFilters(new InputFilter[]{new InputFilterMinMax("0", "250")});
+        final EditText sideB_input = (EditText) findViewById(R.id.sideB);
+        sideB_input.setFilters(new InputFilter[]{new InputFilterMinMax("0", "250")});
     }
 
     private void switchInput(String item) {
@@ -175,7 +185,7 @@ public class ForceCalc extends AppCompatActivity {
         }
     }
 
-    protected void onClick(View view) {
+    public void onClick(View view) {
         Intent intent = new Intent(this, ResultActivity.class);
 
         EditText sideA = (EditText) findViewById(R.id.sideA);

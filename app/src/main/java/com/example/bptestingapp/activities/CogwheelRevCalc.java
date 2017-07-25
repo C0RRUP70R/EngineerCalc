@@ -20,7 +20,6 @@ import static com.example.bptestingapp.auxiliary.CogWheelFc.getCogMarStr;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getCogWidth;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getFootDiameterStr;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getFootStr;
-import static com.example.bptestingapp.auxiliary.CogWheelFc.getHeadDiameterStr;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getHeadStr;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getMod;
 import static com.example.bptestingapp.auxiliary.CogWheelFc.getOutletStr;
@@ -51,9 +50,9 @@ public class CogwheelRevCalc extends AppCompatActivity {
                     setAllFieldsZero();
                 } else if (checkInput()) {
                     calculate();
-                } else {
-                    ((TextView) findViewById(R.id.text_hlav_kr)).setText(diameter_input.getText().toString() + "mm");
                 }
+                    ((TextView) findViewById(R.id.text_hlav_kr)).setText(diameter_input.getText().toString() + "mm");
+
             }
 
             @Override
@@ -99,9 +98,9 @@ public class CogwheelRevCalc extends AppCompatActivity {
         int count = Integer.parseInt(count_txt);
         double modul = getMod(diameter, count);
 
-        ((TextView) findViewById(R.id.modul_txt)).setText(String.valueOf(modul));
+        ((TextView) findViewById(R.id.modul_txt)).setText(String.format("%.2f", modul));
         ((TextView) findViewById(R.id.text_roztec_kr)).setText(getPitchDiameterStr(modul, count));
-        ((TextView) findViewById(R.id.text_hlav_kr)).setText(diameter_input + "mm");
+        //((TextView) findViewById(R.id.text_hlav_kr)).setText(diameter_input + "mm");
         ((TextView) findViewById(R.id.text_pata_kr)).setText(getFootDiameterStr(modul, count));
         ((TextView) findViewById(R.id.text_roztec)).setText(getPitchStr(modul));
         ((TextView) findViewById(R.id.text_vrch_vule)).setText(getOutletStr(modul));
