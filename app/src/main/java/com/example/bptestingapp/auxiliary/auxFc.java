@@ -6,7 +6,7 @@ import com.example.bptestingapp.database.SQLiteDatabaseHandler;
 import com.example.bptestingapp.models.Tolerance;
 
 /**
- * Created by C0RRUP70R on 24.02.2017.
+ * Created by C0RRUP70R.
  */
 
 public class auxFc {
@@ -24,6 +24,7 @@ public class auxFc {
                 ret = calcBendModulus(area, sideA, sideB);
                 break;
             case "smyk":
+                ret = calcArea(area, sideA, sideB);
                 break;
         }
         return ret;
@@ -54,7 +55,6 @@ public class auxFc {
                 double a = Double.parseDouble(sideA);
                 double b = Double.parseDouble(sideB);
                 char axis = 'x';
-                if (a < b) axis = 'z';
                 return calcFc.modulusRectBend(a, b, axis);
             case "čtverec":
                 a = Double.parseDouble(sideA);
